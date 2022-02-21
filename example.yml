@@ -70,7 +70,7 @@ Resources:
       MasterUserPassword: Nareshkumar
       DBInstanceClass: db.t2.micro
       DBName: librarydb
-      DBInstanceIdentifier: myrdslibrary
+      DBInstanceIdentifier: mylibrary
       VPCSecurityGroups:
         - sg-0244e3f85210cc582
       EngineVersion: 5.7
@@ -81,7 +81,7 @@ Resources:
   ELBV2LB1HUDC:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
     Properties:
-      Name: my-load-balancer
+      Name: my-load-balancer10
       Subnets:
         - subnet-04bb8948
         - subnet-bff76bd4
@@ -93,7 +93,7 @@ Resources:
   ELBV2TG4A6L0:
     Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
     Properties:
-      Name: my-target-group
+      Name: my-target-group10
       Port: 80
       Protocol: TCP
       VpcId: vpc-6014600b
@@ -118,7 +118,7 @@ Resources:
   ASLC55LJA:
     Type: AWS::EC2::LaunchTemplate
     Properties: 
-      LaunchTemplateName: my-lt
+      LaunchTemplateName: my-lt10
       LaunchTemplateData: 
         IamInstanceProfile:
           Name: demo_full_access
@@ -171,9 +171,9 @@ Resources:
   ASASG3CEB8:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
     Properties:
-      AutoScalingGroupName: my-asg
+      AutoScalingGroupName: my-asg10
       LaunchTemplate:
-        LaunchTemplateName: my-lt
+        LaunchTemplateName: my-lt10
         Version: !GetAtt ASLC55LJA.LatestVersionNumber
       AvailabilityZones:
         - us-east-2a
