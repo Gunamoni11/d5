@@ -177,7 +177,8 @@ Resources:
         Version: !GetAtt ASLC55LJA.LatestVersionNumber
       AvailabilityZones:
         - us-east-2a
-      DesiredCapacity: 1
+        - us-east-2b
+      DesiredCapacity: 2
       MaxSize: 2
       MinSize: 1
       TargetGroupARNs:
