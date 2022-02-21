@@ -70,7 +70,7 @@ Resources:
       MasterUserPassword: Nareshkumar
       DBInstanceClass: db.t2.micro
       DBName: library
-      DBInstanceIdentifier: library
+      DBInstanceIdentifier: library1
       VPCSecurityGroups:
         - sg-0244e3f85210cc582
       EngineVersion: 5.7
@@ -81,7 +81,7 @@ Resources:
   ELBV2LB1HUDC:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
     Properties:
-      Name: my-load-balancer11
+      Name: my-load-balancer12
       Subnets:
         - subnet-04bb8948
         - subnet-bff76bd4
@@ -93,7 +93,7 @@ Resources:
   ELBV2TG4A6L0:
     Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
     Properties:
-      Name: my-target-group11
+      Name: my-target-group12
       Port: 80
       Protocol: TCP
       VpcId: vpc-6014600b
@@ -118,7 +118,7 @@ Resources:
   ASLC55LJA:
     Type: AWS::EC2::LaunchTemplate
     Properties: 
-      LaunchTemplateName: my-lt11
+      LaunchTemplateName: my-lt12
       LaunchTemplateData: 
         IamInstanceProfile:
           Name: demo_full_access
@@ -161,7 +161,7 @@ Resources:
             sudo chmod 400 /opt/lampp/phpmyadmin/config.inc.php
             sudo /opt/lampp/lampp restart
             sudo apt install mysql-client-core-8.0
-            sudo mysql -h ${endpoint} -u admin --password=Nareshkumar library < /d5/OLMS/SQL\ File/library.sql
+            sudo mysql -h ${endpoint} -u admin --password=Nareshkumar library < /d5/OLMS/SQL\ File/library.sql.zip
           - endpoint: !GetAtt RDSDBI32QQE.Endpoint.Address
     Metadata:
       'AWS::CloudFormation::Designer':
@@ -171,9 +171,9 @@ Resources:
   ASASG3CEB8:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
     Properties:
-      AutoScalingGroupName: my-asg11
+      AutoScalingGroupName: my-asg12
       LaunchTemplate:
-        LaunchTemplateName: my-lt11
+        LaunchTemplateName: my-lt12
         Version: !GetAtt ASLC55LJA.LatestVersionNumber
       AvailabilityZones:
         - us-east-2a
