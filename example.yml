@@ -69,7 +69,7 @@ Resources:
       MasterUsername: admin
       MasterUserPassword: Nareshkumar
       DBInstanceClass: db.t2.micro
-      DBName: librarydb
+      DBName: library
       DBInstanceIdentifier: mylibrary
       VPCSecurityGroups:
         - sg-0244e3f85210cc582
@@ -161,7 +161,7 @@ Resources:
             sudo chmod 400 /opt/lampp/phpmyadmin/config.inc.php
             sudo /opt/lampp/lampp restart
             sudo apt install mysql-client-core-8.0
-            sudo mysql -h ${endpoint} -u admin --password=Nareshkumar librarydb < /d5/OLMS/SQL\ File/librarydb.sql
+            sudo mysql -h ${endpoint} -u admin --password=Nareshkumar library < /d5/OLMS/SQL\ File/library.sql
           - endpoint: !GetAtt RDSDBI32QQE.Endpoint.Address
     Metadata:
       'AWS::CloudFormation::Designer':
